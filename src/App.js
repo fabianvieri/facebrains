@@ -81,7 +81,7 @@ export default class App extends Component {
 
   onSubmit = () => {
     this.setState({ imageURL: this.state.input })
-    fetch('http://localhost:3001/imageurl', {
+    fetch('https://facebrains-server.herokuapp.com/imageurl', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -91,7 +91,7 @@ export default class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('http://localhost:3001/image', {
+          fetch('https://facebrains-server.herokuapp.com/image', {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
